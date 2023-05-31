@@ -10,11 +10,13 @@ export class CardUsuarioComponent implements OnInit {
   imgUrl: string = ''
   name: string = ''
   email: string = ''
+  id: number = 0
 
   ngOnInit(): void {
     this.name = this.user.name
     this.email = this.user.email
     this.imgUrl = 'https://randomuser.me/api/portraits/men/75.jpg'
+    this.id = this.user.id
   }
 
 }

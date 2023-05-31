@@ -8,13 +8,14 @@ import {UsuarioService} from "../../services/usuario.service";
 })
 export class ListUsuariosComponent implements OnInit {
   listUsuarios: any[] = []
+  loading: boolean = true;
 
   constructor(private usuarioService: UsuarioService) {
   }
 
   getUsuarios = () => this.usuarioService.getUsuarios().subscribe(data => {
-    console.log(data)
     this.listUsuarios = data
+    this.loading = false
   })
 
   ngOnInit(): void {

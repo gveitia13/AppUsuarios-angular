@@ -15,4 +15,8 @@ export class UsuarioService {
   getUsuarios(): Observable<any> {
     return this.http.get<any>(this.url + '?access-token=' + this.token)
   }
+
+  getUsuario(id: string | null): Observable<any> {
+    return this.http.get<any>(this.url + '/' + id + '?access-token=' + this.token)
+  }
 }
